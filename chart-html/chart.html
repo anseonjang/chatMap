@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름 - chart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+        }
+
+        #chart {
+            width: 100%; 
+            max-width: 800px;
+            margin: auto;
+            padding: 20px; 
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        @media (max-width:760px) {
+            #chart {
+                max-width: 600px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chart"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        // https://apexcharts.com/javascript-chart-demos/bar-charts/grouped/
+        var options = {
+            series: [{
+                data: [44, 55, 41, 64, 22, 43, 21] // 첫번째 타입 
+            }, {
+                data: [53, 32, 33, 52, 13, 44, 32] // 두번째 타입 
+            }],
+            chart: {
+                type: 'bar', // 차트의 타입 : 막대 형태 
+                height: 430 // 차트의 높이값
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: true, // 수평으로 표시
+                    dataLabels: {
+                        position: 'top', // 데이터 라벨 막대의 상단에 표시 
+                    },
+                }
+            },
+            dataLabels: {
+                enabled: true, // 데이터 라벨 표시 
+                offsetX: -6, // X축 수평 라벨 위치 
+                style: {
+                    fontSize: '12px', // 폰트사이즈 
+                    colors: ['#fff'] // 데이터라벨 색
+                }
+            },
+            stroke: {
+                show: true, // 테두리표시 여부 
+                width: 1, // 두깨 
+                colors: ['#fff'] // 테두리색
+            },
+            tooltip: {
+                shared: true, // 툴팁 공유 
+                intersect: false // 마우스가 데이터에 닿지 않아도 툴팁 표시 
+            },
+            xaxis: {
+                categories: [2024, 2023, 2022, 2021, 2020, 2019, 2018], // 카테고리
+            },
+        };
+
+        // 차트를 렌더링하여 #chart 에 표시 
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render(); // .render(); 렌더링하는 메서드 - 그려주는 기능 
+    </script>
+
+</body>
+
+</html>

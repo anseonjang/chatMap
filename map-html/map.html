@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름-map</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .map {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            max-width: 1200px;
+            margin: 0 auto;
+            /* padding-bottom: 50%; */
+
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 0;
+        }
+
+        @media (max-width:760px) {
+            .map {
+                max-width: 760px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.1413361499085!2d126.99767677283958!3d37.26807544119107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b43bd1fc64201%3A0x4bd2c476a7e14843!2zTUJD7JWE7Lm0642w66-47Lu07ZOo7YSw6rWQ7Jyh7IS87YSw!5e0!3m2!1sko!2skr!4v1725590350149!5m2!1sko!2skr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</body>
+
+</html>
